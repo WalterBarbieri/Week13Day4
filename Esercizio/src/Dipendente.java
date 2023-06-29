@@ -25,19 +25,19 @@ public class Dipendente {
 		switch (livello) {
 		case OPERAIO:
 			this.stipendio = stipendioBase;
-
+			this.importoOrarioStraordinario = 30;
 			break;
 		case IMPIEGATO:
 			this.stipendio = stipendioBase * 1.2;
-			this.importoOrarioStraordinario = importoOrarioStraordinario * 1.2;
+			this.importoOrarioStraordinario = 30 * 1.2;
 			break;
 		case QUADRO:
 			this.stipendio = stipendioBase * 1.5;
-			this.importoOrarioStraordinario = importoOrarioStraordinario * 1.5;
+			this.importoOrarioStraordinario = 30 * 1.5;
 			break;
 		case DIRIGENTE:
 			this.stipendio = stipendioBase * 2;
-			this.importoOrarioStraordinario = importoOrarioStraordinario * 2;
+			this.importoOrarioStraordinario = 30 * 2;
 			break;
 		}
 
@@ -85,17 +85,17 @@ public class Dipendente {
 		case OPERAIO:
 			livello = LivelloType.IMPIEGATO;
 			stipendio = stipendioBase * 1.2;
-			importoOrarioStraordinario = importoOrarioStraordinario * 1.2;
+			this.importoOrarioStraordinario = 30 * 1.2;
 			break;
 		case IMPIEGATO:
 			livello = LivelloType.QUADRO;
 			stipendio = stipendioBase * 1.5;
-			importoOrarioStraordinario = importoOrarioStraordinario * 1.5;
+			this.importoOrarioStraordinario = 30 * 1.5;
 			break;
 		case QUADRO:
 			livello = LivelloType.DIRIGENTE;
 			stipendio = stipendioBase * 2;
-			importoOrarioStraordinario = importoOrarioStraordinario * 2;
+			this.importoOrarioStraordinario = 30 * 2;
 		case DIRIGENTE:
 			System.err.println(
 					"Non è possibile essere promossi oltre la Dirigenza. Per miracoli contattare enti religiosi.");
@@ -109,7 +109,7 @@ public class Dipendente {
 	}
 
 	public static double calcolaPaga(Dipendente dipendente, int orarioStraordinario) {
-		return (dipendente.importoOrarioStraordinario * orarioStraordinario) + dipendente.stipendio;
+		return (dipendente.getImportoStraordinario() * orarioStraordinario) + dipendente.stipendio;
 	}
 
 }
