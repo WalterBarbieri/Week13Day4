@@ -84,16 +84,19 @@ public class Dipendente {
 		switch (livello) {
 		case OPERAIO:
 			livello = LivelloType.IMPIEGATO;
+			dipartimento = DipartimentoType.AMMINISTRAZIONE;
 			stipendio = stipendioBase * 1.2;
 			this.importoOrarioStraordinario = 30 * 1.2;
 			break;
 		case IMPIEGATO:
 			livello = LivelloType.QUADRO;
+			dipartimento = DipartimentoType.VENDITE;
 			stipendio = stipendioBase * 1.5;
 			this.importoOrarioStraordinario = 30 * 1.5;
 			break;
 		case QUADRO:
 			livello = LivelloType.DIRIGENTE;
+			dipartimento = DipartimentoType.VENDITE;
 			stipendio = stipendioBase * 2;
 			this.importoOrarioStraordinario = 30 * 2;
 		case DIRIGENTE:
